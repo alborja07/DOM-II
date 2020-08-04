@@ -70,11 +70,15 @@ window.addEventListener("wheel", () => {
   dogsRule.src = "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
 });
 
-//10 select
-const selecting = document.querySelector('.intro')
-selecting.addEventListener('contextmenu', () => {
-    selecting.style.color = 'red'
+//10 contextmenu (right clicking removes the menu)
+
+const images = document.querySelectorAll('img');
+images.forEach(elem =>{
+    elem.addEventListener('contextmenu', (event)=>{
+        event.preventDefault();
+    })
 })
+
 
 
 //nesting with stop propagate
